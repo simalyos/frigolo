@@ -11,16 +11,18 @@ use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
+#[Route('/ingredient')]
 class IngredientController extends AbstractController
 {
-    #[Route('/', name: 'app_index', methods: ['GET'])]
-    public function index(): Response
+    #[Route('/', name: 'app_ingredient_index', methods: ['GET'])]
+    public function index(IngredientRepository $ingredientRepository): Response
     {
-        return $this->render('ingredient/index.html.twig');
+        return $this->render('ingredient/index.html.twig', [
+            'ingredients' => $ingredientRepository->findAll(),
+        ]);
     }
 
-    #[Route('/ingredient', name: 'app_ingredient_new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'app_ingredient_new', methods: ['GET', 'POST'])]
     public function new(Request $request, IngredientRepository $ingredientRepository): Response
     {
         $ingredient = new Ingredient();
