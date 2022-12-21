@@ -17,4 +17,15 @@ class Ingredient
     {
         return $this->id;
     }
+    public function getType(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
 }
