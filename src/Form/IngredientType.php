@@ -16,7 +16,7 @@ class IngredientType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class, [
+            ->add('n', TextType::class, [
                 'attr'=> [
                     'class' => 'form-control'
                 ], 

@@ -29,7 +29,7 @@ class RecetteType extends AbstractType
         ])
 
 
-        ->add('ingredient', EntityType::class, [
+        ->add('ingredients', EntityType::class, [
             'class'     => Ingredient::class,
             'expanded'  => true,
             'multiple'  => true,
