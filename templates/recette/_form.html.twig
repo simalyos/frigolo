@@ -1,4 +1,26 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
+    {{ form_label(form) }} 
+    {# <table>
+    <tr>
+      <th>Légumes</th>
+      <th>Quantité</th>
+    </tr>
+    {% for ingredient in ingredients %}
+      <tr>
+        <td>
+          <select name="ingredients[{{ loop.index }}[id]]">
+            {% for ingredients in ingredietss %}
+              <option value="{{ ingredients.id }}" {% if ingredients.id == ingredients.ingredients.id%}selected{% endif %}>{{ ingredients.name }}</option>
+            {% endfor %}
+          </select>
+        </td>
+        <td>
+          <input type="number" name="ingredients[{{ loop.index }}][quantity]" value="{{ ingredients.quantity }}" required>
+        </td>
+      </tr>
+    {% endfor %}
+    </table> #}
+
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
