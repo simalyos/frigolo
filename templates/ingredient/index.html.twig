@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Nom</th>
                 <th>Type</th>
                 <th>Quantité</th>
                 <th>Actions</th>
@@ -18,8 +19,9 @@
         {% for ingredient in ingredients %}
             <tr>
                 <td>{{ ingredient.id }}</td>
+                <td>{{ ingredient.name }}</td>
                 <td>{{ ingredient.type }}</td>
-                <td>{{ ingredient.id }}</td>
+                <td>{{ ingredient.quantity }}</td>
                 <td>
                     {# <a href="{{ path('app_ingredient_show', {'id': ingredient.id}) }}">show</a> #}
                     <a href="{{ path('app_ingredient_edit', {'id': ingredient.id}) }}">Modifier</a>

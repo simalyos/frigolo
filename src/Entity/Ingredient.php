@@ -14,16 +14,19 @@ class Ingredient
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $type = null;
+    public ?string $type = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $quantity = null;
+    public ?string $quantity = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $name = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
-    public function getType(): ?string
+    public function getNom(): ?string
     {
         return $this->nom;
     }
@@ -43,6 +46,18 @@ class Ingredient
     public function setQuantity(string $quantity): self
     {
         $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }
